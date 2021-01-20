@@ -26,13 +26,16 @@ export class AppComponent {
   ime: string = '';
   prezime: string = '';
 
+  firstLayoutWindow;
+  secondLayoutWindow;
+
   zapocniEksperiment() {
     this.showIntro = false;
     if(this.redosled === 1) {
-      window.open(this.prviPdf, "_blank");
+      this.firstLayoutWindow = window.open(this.prviPdf, "_blank");
       this.showFirstLayout = true;
     } else if(this.redosled ===2) {
-      window.open(this.drugiPdf, "_blank");
+      this.secondLayoutWindow = window.open(this.drugiPdf, "_blank");
       this.showSecondLayout = true;
     } else {
       console.log("Nesto neocekivano se dogodilo.");
@@ -43,10 +46,12 @@ export class AppComponent {
   predajPrviLayout() {
     if(this.redosled === 2) {
       this.showFirstLayout = false;
+      this.firstLayoutWindow.close();
       this.showThanks = true;
     } else {
       this.showFirstLayout = false;
-      window.open(this.drugiPdf, "_blank");
+      this.firstLayoutWindow.close();
+      this.secondLayoutWindow = window.open(this.drugiPdf, "_blank");
       this.showSecondLayout = true;
     }
   }
@@ -54,10 +59,12 @@ export class AppComponent {
   predajDrugiLayout() {
     if(this.redosled === 1) {
       this.showSecondLayout = false;
+      this.secondLayoutWindow.close();
       this.showThanks = true;
     } else {
       this.showSecondLayout = false;
-      window.open(this.prviPdf, "_blank");
+      this.secondLayoutWindow.close();
+      this.firstLayoutWindow = window.open(this.prviPdf, "_blank");
       this.showFirstLayout = true;
     }
   }
