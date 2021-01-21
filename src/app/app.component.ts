@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { ExperimentService } from './services/experiment.service';
 
 @Component({
   selector: 'app-root',
@@ -35,6 +36,8 @@ export class AppComponent {
   secondStartTime;
   secondEndTime;
 
+  constructor(private experimentService:ExperimentService) { }
+
   zapocniEksperiment() {
     this.showIntro = false;
     if(this.redosled === 1) {
@@ -58,6 +61,7 @@ export class AppComponent {
       this.showFirstLayout = false;
       this.firstLayoutWindow.close();
       this.showThanks = true;
+      this.sendExperimentScore();
     } else {
       this.firstEndTime = performance.now();
       console.log(Math.round((this.firstEndTime - this.firstStartTime)/1000));
@@ -76,6 +80,7 @@ export class AppComponent {
       this.showSecondLayout = false;
       this.secondLayoutWindow.close();
       this.showThanks = true;
+      this.sendExperimentScore();
     } else {
       this.secondEndTime = performance.now();
       console.log(Math.round((this.secondEndTime - this.secondStartTime)/1000));
@@ -85,5 +90,22 @@ export class AppComponent {
       this.showFirstLayout = true;
       this.firstStartTime = performance.now()
     }
+  }
+
+  sendExperimentScore() {
+    var experiment = {
+      'redosled': this.redosled,
+      'layoutTime1': Math.round((this.firstEndTime - this.firstStartTime)/1000),
+      'layoutTime2': Math.round((this.secondEndTime - this.secondStartTime)/1000)
+    };
+
+    this.experimentService.addExperiment(experiment).subscribe({
+      next: data => {
+        console.log("Podaci poslati!");
+      },
+      error: error => {
+        console.log(error);
+      }
+    });
   }
 }
