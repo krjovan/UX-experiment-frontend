@@ -23,6 +23,11 @@ export class AppComponent {
   showSecondLayout = false;
   showThanks = false;
 
+  godineIskustva: number;
+  satiDnevno: number;
+  profesija: boolean;
+  iskustvoKatastar: boolean;
+
   jmbg: string = '';
   ime: string = '';
   prezime: string = '';
@@ -51,7 +56,6 @@ export class AppComponent {
     } else {
       console.log("Nesto neocekivano se dogodilo.");
     }
-
   }
 
   predajPrviLayout() {
@@ -61,7 +65,7 @@ export class AppComponent {
       this.showFirstLayout = false;
       this.firstLayoutWindow.close();
       this.showThanks = true;
-      this.sendExperimentScore();
+      //this.sendExperimentScore();
     } else {
       this.firstEndTime = performance.now();
       console.log(Math.round((this.firstEndTime - this.firstStartTime)/1000));
@@ -80,7 +84,7 @@ export class AppComponent {
       this.showSecondLayout = false;
       this.secondLayoutWindow.close();
       this.showThanks = true;
-      this.sendExperimentScore();
+      //this.sendExperimentScore();
     } else {
       this.secondEndTime = performance.now();
       console.log(Math.round((this.secondEndTime - this.secondStartTime)/1000));

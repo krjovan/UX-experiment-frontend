@@ -1,9 +1,92 @@
 <div *ngIf="showIntro">
-  <p>Naslovna strana, instrukcije i preduslovi za sprovodjenje eksperimenta.</p>
+  <h1 class="w3-center">Dobro došli na UX eksperiment veb aplikaciju!</h1>
+  <br>
+  <div style="text-align: justify; text-justify: inter-word; font-size: 18px;" class="w3-padding">Klikom na dugme "Započni eksperiment" prikazaće Vam se PDF dokument u novom
+    <i>tab</i>-u koji sadrži katastarske podatke. Vaš zadatak je da podatke sa PDF dokumenta unesete u odgovarajuća polja prikazane
+    forme u originalnom tabu. Potrudite se da proces unosa podataka bude što kraći i da forma koju predajete sadrži što manje
+    grešaka (pogrešno prepisanih podataka). Kada kliknete na dugme "Predaj" prikazaće Vam se nova forma i novi PDF dokument,
+    Vaš zadatak ostaje isti samo što se realizuje sa drugom formom i dokumentom. Nakon predaje druge forme, uspešno ste završili
+    eksperiment.
+    <br>
+    <span style="color: red;">Napomena:</span> Dugme za predaju postaje omogućeno tek kada su sva polja forme popunjena.
+    <br>
+    <br>
+    <b>Preduslovi za participaciju u eksperimentu su:</b>
+    <ul>
+      <li>Stabilna internet konekcija.</li>
+      <li>Da pristupate aplikacije preko Chrome ili Firefox veb pregledača.</li>
+      <li>Koristite srpski
+        <i>layout</i> tastature koji sadrži simbole “č,ć,ž,š,đ”.</li>
+      <li>Da pristupate aplikaciji sa
+        <i>desktop</i> ili
+        <i>laptop</i> uređaja (mobilni i tablet uređaji nisu adekvatni za eksperiment).</li>
+      <li>Popunite anketu koja je prikazana ispod (tek tada dugme "Zapoćni eksperiment" postaje omogućeno).</li>
+    </ul>
+  </div>
 
-  <p class="w3-center">
-    <button (click)="zapocniEksperiment()" class="w3-btn w3-teal">Započni eksperiment</button>
-  </p>
+  <div style="margin: 0 auto; margin-top:10px; padding-top: 20px;  width:650px;" class="w3-card-4">
+
+    <div style="font-size: 24px;" class="w3-center">Anketa</div>
+
+    <form class="w3-container" #formControlAnkenta="ngForm">
+      <p>
+        <label class="w3-text-teal">
+          <b>Godine iskustva u korišćenju računara (privatno i poslovno)?</b>
+        </label>
+        <label class="w3-text-red">
+          <b> * </b>
+        </label>
+        <input required [(ngModel)]="godineIskustva" name="godineIskustva" type="number" min="0" max="100" style="text-align: center;">
+      </p>
+      <p>
+        <label class="w3-text-teal">
+          <b>Koliko sati provodite na računaru na dnevnom nivou?</b>
+        </label>
+        <label class="w3-text-red">
+          <b> * </b>
+        </label>
+        <input required [(ngModel)]="satiDnevno" name="satiDnevno" type="number" min="0" max="24" style="text-align: center;">
+      </p>
+      <p>
+        <label class="w3-text-teal">
+          <b>Da li Vaša trenutna profesija podrazumeva svakodnevno korišćenje računara?</b>
+        </label>
+        <label class="w3-text-red">
+          <b> *</b>
+        </label>
+        <br>
+        <input required [(ngModel)]="profesija" style="margin-left: 30px; margin-top: 10px;" type="radio" id="daProfesija" name="profesija"
+          value="true">
+        <label for="daProfesija"> Da</label>
+        <br>
+        <input required [(ngModel)]="profesija" style="margin-left: 30px" type="radio" id="neProfesija" name="profesija" value="false">
+        <label for="neProfesija"> Ne</label>
+        <br>
+      </p>
+
+      <p>
+        <label class="w3-text-teal">
+          <b>Da li imate iskustva u radu sa katastarskim tipovima podataka?</b>
+        </label>
+        <label class="w3-text-red">
+          <b> *</b>
+        </label>
+        <br>
+        <input required [(ngModel)]="iskustvoKatastar" style="margin-left: 30px; margin-top: 10px;" type="radio" id="daIskustvoKatastar"
+          name="iskustvoKatastar" value="true">
+        <label for="daIskustvoKatastar"> Da</label>
+        <br>
+        <input required [(ngModel)]="iskustvoKatastar" style="margin-left: 30px" type="radio" id="neIskustvoKatastar" name="iskustvoKatastar"
+          value="false">
+        <label for="neIskustvoKatastar"> Ne</label>
+        <br>
+      </p>
+      <p class="w3-center">
+        <button type="button" [disabled]="!formControlAnkenta.valid" (click)="zapocniEksperiment()" class="w3-btn w3-teal">Započni eksperiment</button>
+      </p>
+
+    </form>
+  </div>
 </div>
 
 <div *ngIf="showFirstLayout" class="w3-center w3-padding" style="margin:0 auto; max-width: 600px;">
@@ -37,9 +120,8 @@
         <label class="w3-text-red" style="font-style: italic">
           <b> (obavezno) - tačno 13 cifara</b>
         </label>
-        <input style="text-align: center;" required [(ngModel)]="jmbg" class="w3-input w3-border w3-light-grey"
-          oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" pattern="[0-9]+" minlength="13"
-          maxlength="13" name="jmbg" type="text">
+        <input style="text-align: center;" required [(ngModel)]="jmbg" class="w3-input w3-border w3-light-grey" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"
+          pattern="[0-9]+" minlength="13" maxlength="13" name="jmbg" type="text">
       </p>
       <p>
         <label class="w3-text-teal">
@@ -66,9 +148,8 @@
         <label class="w3-text-red" style="font-style: italic">
           <b> (obavezno) - tačno 13 cifara</b>
         </label>
-        <input style="text-align: center;" required [(ngModel)]="jmbg" class="w3-input w3-border w3-light-grey"
-          oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" pattern="[0-9]+" minlength="13"
-          maxlength="13" name="jmbg" type="text">
+        <input style="text-align: center;" required [(ngModel)]="jmbg" class="w3-input w3-border w3-light-grey" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"
+          pattern="[0-9]+" minlength="13" maxlength="13" name="jmbg" type="text">
       </p>
       <p>
         <label class="w3-text-teal">
@@ -95,12 +176,11 @@
         <label class="w3-text-red" style="font-style: italic">
           <b> (obavezno) - tačno 13 cifara</b>
         </label>
-        <input style="text-align: center;" required [(ngModel)]="jmbg" class="w3-input w3-border w3-light-grey"
-          oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" pattern="[0-9]+" minlength="13"
-          maxlength="13" name="jmbg" type="text">
+        <input style="text-align: center;" required [(ngModel)]="jmbg" class="w3-input w3-border w3-light-grey" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"
+          pattern="[0-9]+" minlength="13" maxlength="13" name="jmbg" type="text">
       </p>
       <p class="w3-center">
-        <button type="button" [disabled]="!formControl.valid" (click)="predajPrviLayout()" class="w3-btn w3-teal">Validacija</button>
+        <button type="button" [disabled]="!formControl.valid" (click)="predajPrviLayout()" class="w3-btn w3-teal">Predaj</button>
       </p>
     </form>
   </div>
@@ -139,9 +219,8 @@
         <label class="w3-text-red" style="font-style: italic">
           <b> (obavezno) - tačno 13 cifara</b>
         </label>
-        <input style="text-align: center;" required [(ngModel)]="jmbg" class="w3-input w3-border w3-light-grey"
-          oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" pattern="[0-9]+" minlength="13"
-          maxlength="13" name="jmbg" type="text">
+        <input style="text-align: center;" required [(ngModel)]="jmbg" class="w3-input w3-border w3-light-grey" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"
+          pattern="[0-9]+" minlength="13" maxlength="13" name="jmbg" type="text">
       </p>
       <p>
         <label class="w3-text-teal">
@@ -168,9 +247,8 @@
         <label class="w3-text-red" style="font-style: italic">
           <b> (obavezno) - tačno 13 cifara</b>
         </label>
-        <input style="text-align: center;" required [(ngModel)]="jmbg" class="w3-input w3-border w3-light-grey"
-          oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" pattern="[0-9]+" minlength="13"
-          maxlength="13" name="jmbg" type="text">
+        <input style="text-align: center;" required [(ngModel)]="jmbg" class="w3-input w3-border w3-light-grey" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"
+          pattern="[0-9]+" minlength="13" maxlength="13" name="jmbg" type="text">
       </p>
       <p>
         <label class="w3-text-teal">
@@ -197,12 +275,11 @@
         <label class="w3-text-red" style="font-style: italic">
           <b> (obavezno) - tačno 13 cifara</b>
         </label>
-        <input style="text-align: center;" required [(ngModel)]="jmbg" class="w3-input w3-border w3-light-grey"
-          oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" pattern="[0-9]+" minlength="13"
-          maxlength="13" name="jmbg" type="text">
+        <input style="text-align: center;" required [(ngModel)]="jmbg" class="w3-input w3-border w3-light-grey" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"
+          pattern="[0-9]+" minlength="13" maxlength="13" name="jmbg" type="text">
       </p>
       <p class="w3-center">
-        <button  type="button" [disabled]="!formControl.valid" (click)="predajDrugiLayout()" class="w3-btn w3-teal">Validacija</button>
+        <button type="button" [disabled]="!formControl.valid" (click)="predajDrugiLayout()" class="w3-btn w3-teal">Predaj</button>
       </p>
     </form>
   </div>
