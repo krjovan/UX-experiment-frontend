@@ -24,7 +24,7 @@
     </ul>
   </div>
 
-  <div style="margin: 0 auto; margin-top:10px; padding-top: 20px;  width:650px;" class="w3-card-4">
+  <div style="margin: 0 auto; margin-top:10px; margin-bottom: 25px; padding-top: 20px;  width:650px;" class="w3-card-4">
 
     <div style="font-size: 24px;" class="w3-center">Anketa</div>
 
@@ -92,93 +92,79 @@
 <div *ngIf="showFirstLayout" class="w3-center w3-padding" style="margin:0 auto; max-width: 600px;">
   <div class="w3-card-4">
     <div class="w3-container w3-teal">
-      <h2>PRVI</h2>
+      <h2>Unesite odgovarajuće podatke</h2>
     </div>
     <form class="w3-container" #formControl="ngForm">
+        <fieldset>
+            <legend>PODACI O LOKACIJI</legend>
       <p>
         <label class="w3-text-teal">
-          <b>Ime</b>
+          <b>Ulica i broj</b>
         </label>
-        <label class="w3-text-grey" style="font-style: italic">
-          <b> (opciono) - od 2 do 20 slova</b>
-        </label>
-        <input [(ngModel)]="ime" minlength="2" maxlength="20" name="ime" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
+        <input [(ngModel)]="firstLokUlicaIBroj" required minlength="1" maxlength="50" name="firstLokUlicaIBroj" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
       </p>
       <p>
         <label class="w3-text-teal">
-          <b>Prezime</b>
+          <b>Mesto</b>
         </label>
-        <label class="w3-text-grey" style="font-style: italic">
-          <b> (opciono) - od 2 do 20 slova</b>
-        </label>
-        <input [(ngModel)]="prezime" minlength="2" maxlength="20" name="prezime" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
+        <input [(ngModel)]="firstLokMesto" required minlength="1" maxlength="50" name="firstLokMesto" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
       </p>
       <p>
         <label class="w3-text-teal">
-          <b>JMBG</b>
+          <b>Broj katastarske parcele</b>
         </label>
-        <label class="w3-text-red" style="font-style: italic">
-          <b> (obavezno) - tačno 13 cifara</b>
-        </label>
-        <input style="text-align: center;" required [(ngModel)]="jmbg" class="w3-input w3-border w3-light-grey" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"
-          pattern="[0-9]+" minlength="13" maxlength="13" name="jmbg" type="text">
+        <input [(ngModel)]="firstLokBrKatParcele" required minlength="1" maxlength="50" name="firstLokBrKatParcele" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
       </p>
       <p>
         <label class="w3-text-teal">
-          <b>Ime</b>
+          <b>Površina katastarske parcele</b>
         </label>
-        <label class="w3-text-grey" style="font-style: italic">
-          <b> (opciono) - od 2 do 20 slova</b>
-        </label>
-        <input [(ngModel)]="ime" minlength="2" maxlength="20" name="ime" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
+        <input [(ngModel)]="firstLokPovKatParcele" required minlength="1" maxlength="50" name="firstLokPovKatParcele" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
       </p>
       <p>
         <label class="w3-text-teal">
-          <b>Prezime</b>
+          <b>Broj objekata koji se nalaze na parceli/parcelama</b>
         </label>
-        <label class="w3-text-grey" style="font-style: italic">
-          <b> (opciono) - od 2 do 20 slova</b>
+        <input [(ngModel)]="firstLokBrObjekataNaParceli" required minlength="1" maxlength="50" name="firstLokBrObjekataNaParceli" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
+      </p>
+      </fieldset>
+      <fieldset>
+          <legend>PODACI O PODNOSIOCU ZAHTEVA</legend>
+      <p>
+        <label class="w3-text-teal">
+          <b>Ime i prezime</b>
         </label>
-        <input [(ngModel)]="prezime" minlength="2" maxlength="20" name="prezime" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
+        <input [(ngModel)]="firstPodnosiocImePrez" required minlength="1" maxlength="50" name="firstPodnosiocImePrez" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
       </p>
       <p>
         <label class="w3-text-teal">
-          <b>JMBG</b>
+          <b>Adresa</b>
         </label>
-        <label class="w3-text-red" style="font-style: italic">
-          <b> (obavezno) - tačno 13 cifara</b>
-        </label>
-        <input style="text-align: center;" required [(ngModel)]="jmbg" class="w3-input w3-border w3-light-grey" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"
-          pattern="[0-9]+" minlength="13" maxlength="13" name="jmbg" type="text">
+        <input [(ngModel)]="firstPodnosiocAdresa" required minlength="1" maxlength="50" name="firstPodnosiocAdresa" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
       </p>
       <p>
         <label class="w3-text-teal">
-          <b>Ime</b>
+          <b>JMBG (broj pasoša za stranca)</b>
         </label>
-        <label class="w3-text-grey" style="font-style: italic">
-          <b> (opciono) - od 2 do 20 slova</b>
+        <input [(ngModel)]="firstPodnosiocJmbg" required minlength="1" maxlength="50" name="firstPodnosiocJmbg" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
+      </p>
+    </fieldset>
+    <fieldset>
+        <legend>IZJAVE U VEZI SA PRIBAVLJANJA LOKACIJSKIH USLOVA I DOSTAVOM</legend>
+      <p>
+        <label class="w3-text-teal">
+          <b>E-poštom na e-adresu</b>
         </label>
-        <input [(ngModel)]="ime" minlength="2" maxlength="20" name="ime" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
+        <input [(ngModel)]="firstDostavaEmail" required minlength="1" maxlength="50" name="firstDostavaEmail" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
       </p>
       <p>
         <label class="w3-text-teal">
-          <b>Prezime</b>
+          <b>SMS na mobilnom telefonu</b>
         </label>
-        <label class="w3-text-grey" style="font-style: italic">
-          <b> (opciono) - od 2 do 20 slova</b>
-        </label>
-        <input [(ngModel)]="prezime" minlength="2" maxlength="20" name="prezime" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
+        <input [(ngModel)]="firstDostavaMobilni" required minlength="1" maxlength="50" name="firstDostavaMobilni" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
       </p>
-      <p>
-        <label class="w3-text-teal">
-          <b>JMBG</b>
-        </label>
-        <label class="w3-text-red" style="font-style: italic">
-          <b> (obavezno) - tačno 13 cifara</b>
-        </label>
-        <input style="text-align: center;" required [(ngModel)]="jmbg" class="w3-input w3-border w3-light-grey" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"
-          pattern="[0-9]+" minlength="13" maxlength="13" name="jmbg" type="text">
-      </p>
+    </fieldset>
+
       <p class="w3-center">
         <button type="button" [disabled]="!formControl.valid" (click)="predajPrviLayout()" class="w3-btn w3-teal">Predaj</button>
       </p>
@@ -188,96 +174,86 @@
 
 
 
-<div *ngIf="showSecondLayout" class="w3-center w3-padding" style="margin:0 auto; max-width: 600px;">
+<div *ngIf="showSecondLayout" class="w3-center w3-padding" style="margin:0 auto;">
   <div class="w3-card-4">
     <div class="w3-container w3-teal">
-      <h2>DRUGI</h2>
+      <h2>Unesite odgovarajuće podatke</h2>
     </div>
     <form class="w3-container" #formControl="ngForm">
+        <div style="float:left; width:33%">
+        <fieldset>
+            <legend>PODACI O LOKACIJI</legend>
       <p>
         <label class="w3-text-teal">
-          <b>Ime</b>
+          <b>Ulica i broj</b>
         </label>
-        <label class="w3-text-grey" style="font-style: italic">
-          <b> (opciono) - od 2 do 20 slova</b>
-        </label>
-        <input [(ngModel)]="ime" minlength="2" maxlength="20" name="ime" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
+        <input [(ngModel)]="secondLokUlicaIBroj" required minlength="1" maxlength="50" name="secondLokUlicaIBroj" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
       </p>
       <p>
         <label class="w3-text-teal">
-          <b>Prezime</b>
+          <b>Mesto</b>
         </label>
-        <label class="w3-text-grey" style="font-style: italic">
-          <b> (opciono) - od 2 do 20 slova</b>
-        </label>
-        <input [(ngModel)]="prezime" minlength="2" maxlength="20" name="prezime" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
+        <input [(ngModel)]="secondLokMesto" required minlength="1" maxlength="50" name="secondLokMesto" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
       </p>
       <p>
         <label class="w3-text-teal">
-          <b>JMBG</b>
+          <b>Broj katastarske parcele</b>
         </label>
-        <label class="w3-text-red" style="font-style: italic">
-          <b> (obavezno) - tačno 13 cifara</b>
-        </label>
-        <input style="text-align: center;" required [(ngModel)]="jmbg" class="w3-input w3-border w3-light-grey" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"
-          pattern="[0-9]+" minlength="13" maxlength="13" name="jmbg" type="text">
+        <input [(ngModel)]="secondLokBrKatParcele" required minlength="1" maxlength="50" name="secondLokBrKatParcele" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
       </p>
       <p>
         <label class="w3-text-teal">
-          <b>Ime</b>
+          <b>Površina katastarske parcele</b>
         </label>
-        <label class="w3-text-grey" style="font-style: italic">
-          <b> (opciono) - od 2 do 20 slova</b>
-        </label>
-        <input [(ngModel)]="ime" minlength="2" maxlength="20" name="ime" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
+        <input [(ngModel)]="secondLokPovKatParcele" required minlength="1" maxlength="50" name="secondLokPovKatParcele" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
       </p>
       <p>
         <label class="w3-text-teal">
-          <b>Prezime</b>
+          <b>Broj objekata koji se nalaze na parceli/parcelama</b>
         </label>
-        <label class="w3-text-grey" style="font-style: italic">
-          <b> (opciono) - od 2 do 20 slova</b>
+        <input [(ngModel)]="secondLokBrObjekataNaParceli" required minlength="1" maxlength="50" name="secondLokBrObjekataNaParceli" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
+      </p>
+      </fieldset>
+    </div>
+      <div style="float:left; width:33%">
+      <fieldset>
+          <legend>PODACI O PODNOSIOCU ZAHTEVA</legend>
+      <p>
+        <label class="w3-text-teal">
+          <b>Ime i prezime</b>
         </label>
-        <input [(ngModel)]="prezime" minlength="2" maxlength="20" name="prezime" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
+        <input [(ngModel)]="secondPodnosiocImePrez" required minlength="1" maxlength="50" name="secondPodnosiocImePrez" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
       </p>
       <p>
         <label class="w3-text-teal">
-          <b>JMBG</b>
+          <b>Adresa</b>
         </label>
-        <label class="w3-text-red" style="font-style: italic">
-          <b> (obavezno) - tačno 13 cifara</b>
-        </label>
-        <input style="text-align: center;" required [(ngModel)]="jmbg" class="w3-input w3-border w3-light-grey" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"
-          pattern="[0-9]+" minlength="13" maxlength="13" name="jmbg" type="text">
+        <input [(ngModel)]="secondPodnosiocAdresa" required minlength="1" maxlength="50" name="secondPodnosiocAdresa" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
       </p>
       <p>
         <label class="w3-text-teal">
-          <b>Ime</b>
+          <b>JMBG (broj pasoša za stranca)</b>
         </label>
-        <label class="w3-text-grey" style="font-style: italic">
-          <b> (opciono) - od 2 do 20 slova</b>
+        <input [(ngModel)]="secondPodnosiocJmbg" required minlength="1" maxlength="50" name="secondPodnosiocJmbg" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
+      </p>
+    </fieldset>
+  </div>
+    <fieldset>
+        <legend>KONTAKT INFORMACIJE</legend>
+      <p>
+        <label class="w3-text-teal">
+          <b>E-poštom na e-adresu</b>
         </label>
-        <input [(ngModel)]="ime" minlength="2" maxlength="20" name="ime" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
+        <input [(ngModel)]="secondDostavaEmail" required minlength="1" maxlength="50" name="secondDostavaEmail" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
       </p>
       <p>
         <label class="w3-text-teal">
-          <b>Prezime</b>
+          <b>SMS na mobilnom telefonu</b>
         </label>
-        <label class="w3-text-grey" style="font-style: italic">
-          <b> (opciono) - od 2 do 20 slova</b>
-        </label>
-        <input [(ngModel)]="prezime" minlength="2" maxlength="20" name="prezime" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
+        <input [(ngModel)]="secondDostavaMobilni" required minlength="1" maxlength="50" name="secondDostavaMobilni" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
       </p>
-      <p>
-        <label class="w3-text-teal">
-          <b>JMBG</b>
-        </label>
-        <label class="w3-text-red" style="font-style: italic">
-          <b> (obavezno) - tačno 13 cifara</b>
-        </label>
-        <input style="text-align: center;" required [(ngModel)]="jmbg" class="w3-input w3-border w3-light-grey" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"
-          pattern="[0-9]+" minlength="13" maxlength="13" name="jmbg" type="text">
-      </p>
+    </fieldset>
+
       <p class="w3-center">
         <button type="button" [disabled]="!formControl.valid" (click)="predajDrugiLayout()" class="w3-btn w3-teal">Predaj</button>
       </p>

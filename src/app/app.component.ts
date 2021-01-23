@@ -28,9 +28,28 @@ export class AppComponent {
   profesija: boolean;
   iskustvoKatastar: boolean;
 
-  jmbg: string = '';
-  ime: string = '';
-  prezime: string = '';
+  firstLokUlicaIBroj: string = '';
+  firstLokMesto: string = '';
+  firstLokBrKatParcele: string = '';
+  firstLokPovKatParcele: string = '';
+  firstLokBrObjekataNaParceli: string = '';
+  firstPodnosiocImePrez: string = '';
+  firstPodnosiocAdresa: string = '';
+  firstPodnosiocJmbg: string = '';
+  firstDostavaEmail: string = '';
+  firstDostavaMobilni: string = '';
+
+  secondLokUlicaIBroj: string = '';
+  secondLokMesto: string = '';
+  secondLokBrKatParcele: string = '';
+  secondLokPovKatParcele: string = '';
+  secondLokBrObjekataNaParceli: string = '';
+  secondPodnosiocImePrez: string = '';
+  secondPodnosiocAdresa: string = '';
+  secondPodnosiocJmbg: string = '';
+  secondDostavaEmail: string = '';
+  secondDostavaMobilni: string = '';
+
 
   firstLayoutWindow;
   secondLayoutWindow;
