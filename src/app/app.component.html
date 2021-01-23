@@ -95,75 +95,85 @@
       <h2>Unesite odgovarajuće podatke</h2>
     </div>
     <form class="w3-container" #formControl="ngForm">
-        <fieldset>
-            <legend>PODACI O LOKACIJI</legend>
-      <p>
-        <label class="w3-text-teal">
-          <b>Ulica i broj</b>
-        </label>
-        <input [(ngModel)]="firstLokUlicaIBroj" required minlength="1" maxlength="50" name="firstLokUlicaIBroj" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
-      </p>
-      <p>
-        <label class="w3-text-teal">
-          <b>Mesto</b>
-        </label>
-        <input [(ngModel)]="firstLokMesto" required minlength="1" maxlength="50" name="firstLokMesto" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
-      </p>
-      <p>
-        <label class="w3-text-teal">
-          <b>Broj katastarske parcele</b>
-        </label>
-        <input [(ngModel)]="firstLokBrKatParcele" required minlength="1" maxlength="50" name="firstLokBrKatParcele" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
-      </p>
-      <p>
-        <label class="w3-text-teal">
-          <b>Površina katastarske parcele</b>
-        </label>
-        <input [(ngModel)]="firstLokPovKatParcele" required minlength="1" maxlength="50" name="firstLokPovKatParcele" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
-      </p>
-      <p>
-        <label class="w3-text-teal">
-          <b>Broj objekata koji se nalaze na parceli/parcelama</b>
-        </label>
-        <input [(ngModel)]="firstLokBrObjekataNaParceli" required minlength="1" maxlength="50" name="firstLokBrObjekataNaParceli" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
-      </p>
+      <fieldset>
+        <legend>PODACI O LOKACIJI</legend>
+        <p>
+          <label class="w3-text-teal">
+            <b>Ulica i broj</b>
+          </label>
+          <input [(ngModel)]="firstLokUlicaIBroj" required minlength="1" maxlength="50" name="firstLokUlicaIBroj" type="text" style="text-align: center;"
+            class="w3-input w3-border w3-light-grey">
+        </p>
+        <p>
+          <label class="w3-text-teal">
+            <b>Mesto</b>
+          </label>
+          <input [(ngModel)]="firstLokMesto" required minlength="1" maxlength="50" name="firstLokMesto" type="text" style="text-align: center;"
+            class="w3-input w3-border w3-light-grey">
+        </p>
+        <p>
+          <label class="w3-text-teal">
+            <b>Broj katastarske parcele</b>
+          </label>
+          <input [(ngModel)]="firstLokBrKatParcele" required minlength="1" maxlength="50" name="firstLokBrKatParcele" type="text" style="text-align: center;"
+            class="w3-input w3-border w3-light-grey">
+        </p>
+        <p>
+          <label class="w3-text-teal">
+            <b>Površina katastarske parcele</b>
+          </label>
+          <input [(ngModel)]="firstLokPovKatParcele" required minlength="1" maxlength="50" name="firstLokPovKatParcele" type="text"
+            style="text-align: center;" class="w3-input w3-border w3-light-grey">
+        </p>
+        <p>
+          <label class="w3-text-teal">
+            <b>Broj objekata koji se nalaze na parceli/parcelama</b>
+          </label>
+          <input [(ngModel)]="firstLokBrObjekataNaParceli" required minlength="1" maxlength="50" name="firstLokBrObjekataNaParceli"
+            type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
+        </p>
       </fieldset>
       <fieldset>
-          <legend>PODACI O PODNOSIOCU ZAHTEVA</legend>
-      <p>
-        <label class="w3-text-teal">
-          <b>Ime i prezime</b>
-        </label>
-        <input [(ngModel)]="firstPodnosiocImePrez" required minlength="1" maxlength="50" name="firstPodnosiocImePrez" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
-      </p>
-      <p>
-        <label class="w3-text-teal">
-          <b>Adresa</b>
-        </label>
-        <input [(ngModel)]="firstPodnosiocAdresa" required minlength="1" maxlength="50" name="firstPodnosiocAdresa" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
-      </p>
-      <p>
-        <label class="w3-text-teal">
-          <b>JMBG (broj pasoša za stranca)</b>
-        </label>
-        <input [(ngModel)]="firstPodnosiocJmbg" required minlength="1" maxlength="50" name="firstPodnosiocJmbg" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
-      </p>
-    </fieldset>
-    <fieldset>
-        <legend>IZJAVE U VEZI SA PRIBAVLJANJA LOKACIJSKIH USLOVA I DOSTAVOM</legend>
-      <p>
-        <label class="w3-text-teal">
-          <b>E-poštom na e-adresu</b>
-        </label>
-        <input [(ngModel)]="firstDostavaEmail" required minlength="1" maxlength="50" name="firstDostavaEmail" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
-      </p>
-      <p>
-        <label class="w3-text-teal">
-          <b>SMS na mobilnom telefonu</b>
-        </label>
-        <input [(ngModel)]="firstDostavaMobilni" required minlength="1" maxlength="50" name="firstDostavaMobilni" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
-      </p>
-    </fieldset>
+        <legend>PODACI O PODNOSIOCU ZAHTEVA</legend>
+        <p>
+          <label class="w3-text-teal">
+            <b>Ime i prezime</b>
+          </label>
+          <input [(ngModel)]="firstPodnosiocImePrez" required minlength="1" maxlength="50" name="firstPodnosiocImePrez" type="text"
+            style="text-align: center;" class="w3-input w3-border w3-light-grey">
+        </p>
+        <p>
+          <label class="w3-text-teal">
+            <b>Adresa</b>
+          </label>
+          <input [(ngModel)]="firstPodnosiocAdresa" required minlength="1" maxlength="50" name="firstPodnosiocAdresa" type="text" style="text-align: center;"
+            class="w3-input w3-border w3-light-grey">
+        </p>
+        <p>
+          <label class="w3-text-teal">
+            <b>JMBG (broj pasoša za stranca)</b>
+          </label>
+          <input [(ngModel)]="firstPodnosiocJmbg" required minlength="1" maxlength="50" name="firstPodnosiocJmbg" type="text" style="text-align: center;"
+            class="w3-input w3-border w3-light-grey">
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>KONTAKT INFORMACIJE</legend>
+        <p>
+          <label class="w3-text-teal">
+            <b>E-poštom na e-adresu</b>
+          </label>
+          <input [(ngModel)]="firstDostavaEmail" required minlength="1" maxlength="50" name="firstDostavaEmail" type="text" style="text-align: center;"
+            class="w3-input w3-border w3-light-grey">
+        </p>
+        <p>
+          <label class="w3-text-teal">
+            <b>SMS na mobilnom telefonu</b>
+          </label>
+          <input [(ngModel)]="firstDostavaMobilni" required minlength="1" maxlength="50" name="firstDostavaMobilni" type="text" style="text-align: center;"
+            class="w3-input w3-border w3-light-grey">
+        </p>
+      </fieldset>
 
       <p class="w3-center">
         <button type="button" [disabled]="!formControl.valid" (click)="predajPrviLayout()" class="w3-btn w3-teal">Predaj</button>
@@ -180,79 +190,89 @@
       <h2>Unesite odgovarajuće podatke</h2>
     </div>
     <form class="w3-container" #formControl="ngForm">
-        <div style="float:left; width:33%">
-        <fieldset>
-            <legend>PODACI O LOKACIJI</legend>
-      <p>
-        <label class="w3-text-teal">
-          <b>Ulica i broj</b>
-        </label>
-        <input [(ngModel)]="secondLokUlicaIBroj" required minlength="1" maxlength="50" name="secondLokUlicaIBroj" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
-      </p>
-      <p>
-        <label class="w3-text-teal">
-          <b>Mesto</b>
-        </label>
-        <input [(ngModel)]="secondLokMesto" required minlength="1" maxlength="50" name="secondLokMesto" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
-      </p>
-      <p>
-        <label class="w3-text-teal">
-          <b>Broj katastarske parcele</b>
-        </label>
-        <input [(ngModel)]="secondLokBrKatParcele" required minlength="1" maxlength="50" name="secondLokBrKatParcele" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
-      </p>
-      <p>
-        <label class="w3-text-teal">
-          <b>Površina katastarske parcele</b>
-        </label>
-        <input [(ngModel)]="secondLokPovKatParcele" required minlength="1" maxlength="50" name="secondLokPovKatParcele" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
-      </p>
-      <p>
-        <label class="w3-text-teal">
-          <b>Broj objekata koji se nalaze na parceli/parcelama</b>
-        </label>
-        <input [(ngModel)]="secondLokBrObjekataNaParceli" required minlength="1" maxlength="50" name="secondLokBrObjekataNaParceli" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
-      </p>
-      </fieldset>
-    </div>
       <div style="float:left; width:33%">
-      <fieldset>
+        <fieldset>
+          <legend>PODACI O LOKACIJI</legend>
+          <p>
+            <label class="w3-text-teal">
+              <b>Ulica i broj</b>
+            </label>
+            <input [(ngModel)]="secondLokUlicaIBroj" required minlength="1" maxlength="50" name="secondLokUlicaIBroj" type="text" style="text-align: center;"
+              class="w3-input w3-border w3-light-grey">
+          </p>
+          <p>
+            <label class="w3-text-teal">
+              <b>Mesto</b>
+            </label>
+            <input [(ngModel)]="secondLokMesto" required minlength="1" maxlength="50" name="secondLokMesto" type="text" style="text-align: center;"
+              class="w3-input w3-border w3-light-grey">
+          </p>
+          <p>
+            <label class="w3-text-teal">
+              <b>Broj katastarske parcele</b>
+            </label>
+            <input [(ngModel)]="secondLokBrKatParcele" required minlength="1" maxlength="50" name="secondLokBrKatParcele" type="text"
+              style="text-align: center;" class="w3-input w3-border w3-light-grey">
+          </p>
+          <p>
+            <label class="w3-text-teal">
+              <b>Površina katastarske parcele</b>
+            </label>
+            <input [(ngModel)]="secondLokPovKatParcele" required minlength="1" maxlength="50" name="secondLokPovKatParcele" type="text"
+              style="text-align: center;" class="w3-input w3-border w3-light-grey">
+          </p>
+          <p>
+            <label class="w3-text-teal">
+              <b>Broj objekata koji se nalaze na parceli/parcelama</b>
+            </label>
+            <input [(ngModel)]="secondLokBrObjekataNaParceli" required minlength="1" maxlength="50" name="secondLokBrObjekataNaParceli"
+              type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
+          </p>
+        </fieldset>
+      </div>
+      <div style="float:left; width:33%">
+        <fieldset>
           <legend>PODACI O PODNOSIOCU ZAHTEVA</legend>
-      <p>
-        <label class="w3-text-teal">
-          <b>Ime i prezime</b>
-        </label>
-        <input [(ngModel)]="secondPodnosiocImePrez" required minlength="1" maxlength="50" name="secondPodnosiocImePrez" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
-      </p>
-      <p>
-        <label class="w3-text-teal">
-          <b>Adresa</b>
-        </label>
-        <input [(ngModel)]="secondPodnosiocAdresa" required minlength="1" maxlength="50" name="secondPodnosiocAdresa" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
-      </p>
-      <p>
-        <label class="w3-text-teal">
-          <b>JMBG (broj pasoša za stranca)</b>
-        </label>
-        <input [(ngModel)]="secondPodnosiocJmbg" required minlength="1" maxlength="50" name="secondPodnosiocJmbg" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
-      </p>
-    </fieldset>
-  </div>
-    <fieldset>
+          <p>
+            <label class="w3-text-teal">
+              <b>Ime i prezime</b>
+            </label>
+            <input [(ngModel)]="secondPodnosiocImePrez" required minlength="1" maxlength="50" name="secondPodnosiocImePrez" type="text"
+              style="text-align: center;" class="w3-input w3-border w3-light-grey">
+          </p>
+          <p>
+            <label class="w3-text-teal">
+              <b>Adresa</b>
+            </label>
+            <input [(ngModel)]="secondPodnosiocAdresa" required minlength="1" maxlength="50" name="secondPodnosiocAdresa" type="text"
+              style="text-align: center;" class="w3-input w3-border w3-light-grey">
+          </p>
+          <p>
+            <label class="w3-text-teal">
+              <b>JMBG (broj pasoša za stranca)</b>
+            </label>
+            <input [(ngModel)]="secondPodnosiocJmbg" required minlength="1" maxlength="50" name="secondPodnosiocJmbg" type="text" style="text-align: center;"
+              class="w3-input w3-border w3-light-grey">
+          </p>
+        </fieldset>
+      </div>
+      <fieldset>
         <legend>KONTAKT INFORMACIJE</legend>
-      <p>
-        <label class="w3-text-teal">
-          <b>E-poštom na e-adresu</b>
-        </label>
-        <input [(ngModel)]="secondDostavaEmail" required minlength="1" maxlength="50" name="secondDostavaEmail" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
-      </p>
-      <p>
-        <label class="w3-text-teal">
-          <b>SMS na mobilnom telefonu</b>
-        </label>
-        <input [(ngModel)]="secondDostavaMobilni" required minlength="1" maxlength="50" name="secondDostavaMobilni" type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
-      </p>
-    </fieldset>
+        <p>
+          <label class="w3-text-teal">
+            <b>E-poštom na e-adresu</b>
+          </label>
+          <input [(ngModel)]="secondDostavaEmail" required minlength="1" maxlength="50" name="secondDostavaEmail" type="text" style="text-align: center;"
+            class="w3-input w3-border w3-light-grey">
+        </p>
+        <p>
+          <label class="w3-text-teal">
+            <b>SMS na mobilnom telefonu</b>
+          </label>
+          <input [(ngModel)]="secondDostavaMobilni" required minlength="1" maxlength="50" name="secondDostavaMobilni" type="text" style="text-align: center;"
+            class="w3-input w3-border w3-light-grey">
+        </p>
+      </fieldset>
 
       <p class="w3-center">
         <button type="button" [disabled]="!formControl.valid" (click)="predajDrugiLayout()" class="w3-btn w3-teal">Predaj</button>
@@ -262,10 +282,50 @@
 </div>
 
 
-<div *ngIf="showThanks" class="w3-center w3-padding" style="margin:0 auto; max-width: 600px;">
-  <div class="w3-card-4">
-    <div class="w3-container w3-teal">
-      <h2>Hvala na participaciji!</h2>
+<div *ngIf="showUtisci">
+  <div style="margin: 0 auto; margin-top:10px; margin-bottom: 25px; padding-top: 20px;  width:650px;" class="w3-card-4">
+
+    <div style="font-size: 24px;" class="w3-center">Vaši utisci</div>
+
+      <form class="w3-container" #formControlUtisici="ngForm">
+        <p>
+          <label class="w3-text-teal">
+            <b>Koju formu od prikazane dve biste radije koristili u budućnosti za unos korišćenih podataka?</b>
+          </label>
+          <label class="w3-text-red">
+            <b> *</b>
+          </label>
+          <br>
+          <input required [(ngModel)]="subjekatPreferira" style="margin-left: 30px; margin-top: 10px;" type="radio" id="firstSubjekatPreferira"
+            name="subjekatPreferira" value="first">
+          <label for="firstSubjekatPreferira"> Forma u jednoj koloni</label>
+          <br>
+          <input required [(ngModel)]="subjekatPreferira" style="margin-left: 30px" type="radio" id="secondSubjekatPreferira" name="subjekatPreferira"
+            value="second">
+          <label for="secondSubjekatPreferira"> Forma u tri kolone</label>
+          <br>
+        </p>
+
+        <p>
+            <label class="w3-text-teal">
+                <b>Vaše mišljenje o koriščenim formama, eksperimentu, aplikaciji i dr. - do 300 karaktera (opicono)</b>
+              </label>
+            <textarea [(ngModel)]="subjekatMisljenje" maxlength="300" style="resize: none; margin-left: 30px; margin-top: 10px;" id="subjekatMisljenje" name="textArea" rows="5" cols="60">
+
+            </textarea>
+          </p>
+
+        <p class="w3-center">
+          <button type="button" [disabled]="!formControlUtisici.valid" (click)="predajUtiske()" class="w3-btn w3-teal">Predaj</button>
+        </p>
+      </form>
+    </div>
+</div>
+
+  <div *ngIf="showThanks" class="w3-center w3-padding" style="margin:0 auto; max-width: 600px;">
+    <div class="w3-card-4">
+      <div class="w3-container w3-teal">
+        <h2>Hvala na participaciji!</h2>
+      </div>
     </div>
   </div>
-</div>

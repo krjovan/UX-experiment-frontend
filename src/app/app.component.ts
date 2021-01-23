@@ -21,6 +21,7 @@ export class AppComponent {
   showIntro = true;
   showFirstLayout = false;
   showSecondLayout = false;
+  showUtisci = false;
   showThanks = false;
 
   godineIskustva: number;
@@ -50,6 +51,9 @@ export class AppComponent {
   secondDostavaEmail: string = '';
   secondDostavaMobilni: string = '';
 
+  subjekatPreferira: string;
+  subjekatMisljenje: string;
+
 
   firstLayoutWindow;
   secondLayoutWindow;
@@ -67,7 +71,8 @@ export class AppComponent {
     if(this.redosled === 1) {
       this.firstLayoutWindow = window.open(this.prviPdf, "_blank");
       this.showFirstLayout = true;
-      this.firstStartTime = performance.now()
+      this.firstStartTime = performance.now();
+      window.scrollTo(0, 0);
     } else if(this.redosled ===2) {
       this.secondLayoutWindow = window.open(this.drugiPdf, "_blank");
       this.showSecondLayout = true;
@@ -80,14 +85,11 @@ export class AppComponent {
   predajPrviLayout() {
     if(this.redosled === 2) {
       this.firstEndTime = performance.now();
-      console.log(Math.round((this.firstEndTime - this.firstStartTime)/1000));
       this.showFirstLayout = false;
       this.firstLayoutWindow.close();
-      this.showThanks = true;
-      //this.sendExperimentScore();
+      this.showUtisci = true;
     } else {
       this.firstEndTime = performance.now();
-      console.log(Math.round((this.firstEndTime - this.firstStartTime)/1000));
       this.showFirstLayout = false;
       this.firstLayoutWindow.close();
       this.secondLayoutWindow = window.open(this.drugiPdf, "_blank");
@@ -99,28 +101,65 @@ export class AppComponent {
   predajDrugiLayout() {
     if(this.redosled === 1) {
       this.secondEndTime = performance.now();
-      console.log(Math.round((this.secondEndTime - this.secondStartTime)/1000));
       this.showSecondLayout = false;
       this.secondLayoutWindow.close();
-      this.showThanks = true;
-      //this.sendExperimentScore();
+      this.showUtisci = true;
     } else {
       this.secondEndTime = performance.now();
-      console.log(Math.round((this.secondEndTime - this.secondStartTime)/1000));
       this.showSecondLayout = false;
       this.secondLayoutWindow.close();
       this.firstLayoutWindow = window.open(this.prviPdf, "_blank");
       this.showFirstLayout = true;
-      this.firstStartTime = performance.now()
+      this.firstStartTime = performance.now();
+      window.scrollTo(0, 0);
     }
   }
 
+  predajUtiske() {
+    this.showUtisci = false;
+    this.showThanks = true;
+    this.sendExperimentScore();
+  }
+
   sendExperimentScore() {
+
     var experiment = {
+      'godineIskustva': this.godineIskustva,
+      'satiDnevno': this.satiDnevno,
+      'profesija': this.profesija,
+      'iskustvoKatastar': this.iskustvoKatastar,
+
       'redosled': this.redosled,
-      'layoutTime1': Math.round((this.firstEndTime - this.firstStartTime)/1000),
-      'layoutTime2': Math.round((this.secondEndTime - this.secondStartTime)/1000)
+
+      'firstLokUlicaIBroj': this.firstLokUlicaIBroj,
+      'firstLokMesto': this.firstLokMesto,
+      'firstLokBrKatParcele': this.firstLokBrKatParcele,
+      'firstLokPovKatParcele': this.firstLokPovKatParcele,
+      'firstLokBrObjekataNaParceli': this.firstLokBrObjekataNaParceli,
+      'firstPodnosiocImePrez': this.firstPodnosiocImePrez,
+      'firstPodnosiocAdresa': this.firstPodnosiocAdresa,
+      'firstPodnosiocJmbg': this.firstPodnosiocJmbg,
+      'firstDostavaEmail': this.firstDostavaEmail,
+      'firstDostavaMobilni': this.firstDostavaMobilni,
+      'firstLayoutTime': Math.round((this.firstEndTime - this.firstStartTime)/1000),
+
+      'secondLokUlicaIBroj': this.secondLokUlicaIBroj,
+      'secondLokMesto': this.secondLokMesto,
+      'secondLokBrKatParcele': this.secondLokBrKatParcele,
+      'secondLokPovKatParcele': this.secondLokPovKatParcele,
+      'secondLokBrObjekataNaParceli': this.secondLokBrObjekataNaParceli,
+      'secondPodnosiocImePrez': this.secondPodnosiocImePrez,
+      'secondPodnosiocAdresa': this.secondPodnosiocAdresa,
+      'secondPodnosiocJmbg': this.secondPodnosiocJmbg,
+      'secondDostavaEmail': this.secondDostavaEmail,
+      'secondDostavaMobilni': this.secondDostavaMobilni,
+      'secondLayoutTime': Math.round((this.secondEndTime - this.secondStartTime)/1000),
+
+      'subjekatPreferira': this.subjekatPreferira,
+      'subjekatMisljenje': this.subjekatMisljenje
     };
+
+    console.log(experiment);
 
     this.experimentService.addExperiment(experiment).subscribe({
       next: data => {
