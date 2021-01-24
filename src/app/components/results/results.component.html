@@ -1,0 +1,111 @@
+<dialog *ngIf="openDialog" open>
+    <h1 style="text-align:center">Podaci o slučaju</h1>
+    <div>
+        <p><span class="boja">Godine iskustva: </span>{{prikazi.godineIskustva}}</p>
+        <p><span class="boja">Iskustvo sa katastarom: </span>{{(prikazi.iskustvoKatastar)?'Da':'Ne'}}</p>
+        <p><span class="boja">Profesija uključuje računar: </span>{{(prikazi.profesija)?'Da':'Ne'}}</p>
+        <p><span class="boja">Redosled formi: </span>{{(prikazi.redosled==1)?'Prvi':'Drugi'}}</p>
+        <p><span class="boja">Dnevno sati za računarom: </span>{{prikazi.satiDnevno}} h</p>
+        <p>&nbsp;</p>
+        <p><span class="boja">Prva Forma Email: </span>{{prikazi.firstDostavaEmail}} <span class="greska">(grešaka: {{gresaka[0]}})
+            </span><span class="odgovor">[{{tacni[0].DostavaEmail}}]</span></p>
+        <p><span class="boja">Prva Forma Mobilni: </span>{{prikazi.firstDostavaMobilni}} <span class="greska">(grešaka: {{gresaka[1]}})
+        </span><span class="odgovor">[{{tacni[0].DostavaMobilni}}]</span></p>
+        <p><span class="boja">Prva Forma Broj Parcele: </span>{{prikazi.firstLokBrKatParcele}} <span
+                class="greska">(grešaka: {{gresaka[2]}})
+            </span><span class="odgovor">[{{tacni[0].LokBrKatParcele}}]</span></p>
+        <p><span class="boja">Prva Forma Objekti: </span>{{prikazi.firstLokBrObjekataNaParceli}} <span
+                class="greska">(grešaka: {{gresaka[3]}}) </span><span class="odgovor">[{{tacni[0].LokBrObjekataNaParceli}}]</span></p>
+        <p><span class="boja">Prva Forma Mesto: </span>{{prikazi.firstLokMesto}} <span class="greska">(grešaka: {{gresaka[4]}})
+        </span><span class="odgovor">[{{tacni[0].LokMesto}}]</span></p>
+        <p><span class="boja">Prva Forma Površina: </span>{{prikazi.firstLokPovKatParcele}} <span class="greska">(grešaka: {{gresaka[5]}})
+        </span><span class="odgovor">[{{tacni[0].LokPovKatParcele}}]</span></p>
+        <p><span class="boja">Prva Forma Ulica: </span>{{prikazi.firstLokUlicaIBroj}} <span class="greska">(grešaka: {{gresaka[6]}})
+        </span><span class="odgovor">[{{tacni[0].LokUlicaIBroj}}]</span></p>
+        <p><span class="boja">Prva Forma Podnosioc Adresa: </span>{{prikazi.firstPodnosiocAdresa}} <span
+                class="greska">(grešaka: {{gresaka[7]}}) </span><span class="odgovor">[{{tacni[0].PodnosiocAdresa}}]</span></p>
+        <p><span class="boja">Prva Forma Podnosioc Ime: </span>{{prikazi.firstPodnosiocImePrez}} <span
+                class="greska">(grešaka: {{gresaka[8]}}) </span><span class="odgovor">[{{tacni[0].PodnosiocImePrez}}]</span></p>
+        <p><span class="boja">Prva Forma Podnosioc Jmbg: </span>{{prikazi.firstPodnosiocJmbg}} <span
+                class="greska">(grešaka: {{gresaka[9]}})
+            </span><span class="odgovor">[{{tacni[0].PodnosiocJmbg}}]</span></p>
+        <p><span class="boja">Druga Forma Email: </span>{{prikazi.secondDostavaEmail}} <span class="greska">(grešaka: {{gresaka[10]}})
+        </span><span class="odgovor">[{{tacni[1].DostavaEmail}}]</span></p>
+        <p><span class="boja">Druga Forma Mobilni: </span>{{prikazi.secondDostavaMobilni}} <span class="greska">(grešaka: {{gresaka[11]}})
+        </span><span class="odgovor">[{{tacni[1].DostavaMobilni}}]</span></p>
+        <p><span class="boja">Druga Forma Broj Parcele: </span>{{prikazi.secondLokBrKatParcele}} <span
+                class="greska">(grešaka: {{gresaka[12]}}) </span><span class="odgovor">[{{tacni[1].LokBrKatParcele}}]</span></p>
+        <p><span class="boja">Druga Forma Objekti: </span>{{prikazi.secondLokBrObjekataNaParceli}} <span
+                class="greska">(grešaka: {{gresaka[13]}}) </span><span class="odgovor">[{{tacni[1].LokBrObjekataNaParceli}}]</span></p>
+        <p><span class="boja">Druga Forma Mesto: </span>{{prikazi.secondLokMesto}} <span class="greska">(grešaka: {{gresaka[14]}})
+        </span><span class="odgovor">[{{tacni[1].LokMesto}}]</span></p>
+        <p><span class="boja">Druga Forma Površina </span>{{prikazi.secondLokPovKatParcele}} <span
+                class="greska">(grešaka: {{gresaka[15]}})
+            </span><span class="odgovor">[{{tacni[1].LokPovKatParcele}}]</span></p>
+        <p><span class="boja">Druga Forma Ulica: </span>{{prikazi.secondLokUlicaIBroj}} <span class="greska">(grešaka: {{gresaka[16]}})
+        </span><span class="odgovor">[{{tacni[1].LokUlicaIBroj}}]</span></p>
+        <p><span class="boja">Druga Forma Podnosioc Adresa: </span>{{prikazi.secondPodnosiocAdresa}} <span
+                class="greska">(grešaka: {{gresaka[17]}}) </span><span class="odgovor">[{{tacni[1].PodnosiocAdresa}}]</span></p>
+        <p><span class="boja">Druga Forma Podnosioc Ime: </span>{{prikazi.secondPodnosiocImePrez}} <span
+                class="greska">(grešaka: {{gresaka[18]}}) </span><span class="odgovor">[{{tacni[1].PodnosiocImePrez}}]</span></p>
+        <p><span class="boja">Druga Forma Podnosioc Jmbg: </span>{{prikazi.secondPodnosiocJmbg}} <span
+                class="greska">(grešaka: {{gresaka[19]}}) </span><span class="odgovor">[{{tacni[1].PodnosiocJmbg}}]</span></p>
+        <p>&nbsp;</p>
+        <p><span class="boja">Vreme na prvoj formi: </span>{{prikazi.firstLayoutTime}} sek</p>
+        <p><span class="boja">Vreme na drugoj formi: </span>{{prikazi.secondLayoutTime}} sek</p>
+        <p><span class="boja">Mišljenje subjekta: </span>{{prikazi.subjekatMisljenje}}</p>
+        <p><span class="boja">Subjekat preferira: </span>{{(prikazi.subjekatPreferira=="second")?'Drugu formu':'Prvi
+            formu'}}</p>
+
+        <p>&nbsp;</p>
+        <p><span class="boja">Ukupno grešaka: </span>{{ukupnoGresaka}}</p>
+        <button style="display:block; text-align: center; margin: auto" (click)="closeDialog()">Zatvori</button>
+    </div>
+</dialog>
+
+<div *ngIf="podaci.length != 0">
+    <div style="text-align: center">
+        <h1>Rezultati istraživanja</h1>
+    </div>
+    <div style="max-width: 900px; margin: auto;">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Rbr</th>
+                    <th>Godine Iskustva</th>
+                    <th>Iskustvo s katastrom</th>
+                    <th>Rad na racunaru - Profesija</th>
+                    <th>Dnevno sati na računaru</th>
+                    <th>Detalji</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let obj of podaci; let i = index">
+                    <td class="loading">
+                        <div class="bar">{{i+1}}.</div>
+                    </td>
+                    <td class="loading">
+                        <div class="bar">{{obj.godineIskustva}}</div>
+                    </td>
+                    <td class="loading">
+                        <div class="bar">{{(obj.iskustvoKatastar)?'Da':'Ne'}}</div>
+                    </td>
+                    <td class="loading">
+                        <div class="bar">{{(obj.profesija)?'Da':'Ne'}}</div>
+                    </td>
+                    <td class="loading">
+                        <div class="bar">{{obj.satiDnevno}}</div>
+                    </td>
+                    <td class="loading">
+                        <button (click)="aktivirajDetalje(obj)">Detalji</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div style=" margin: auto; margin-top:20px; text-align: center">
+    <input [(ngModel)]="greskeNaKraju" [ngModelOptions]="{standalone: true}" type="checkbox" id="poljeGresaka" name="poljeGresaka">
+    <label for="poljeGresaka"> Greske idu pored polja unosa. (Ako nije oznaceno greske ce ici na kraju)</label><br>
+    <button style="display:block; text-align: center; margin: auto;" (click)="eksportujCSV()">Eksportuj CSV</button>
+</div>
