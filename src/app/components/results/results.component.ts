@@ -24,7 +24,7 @@ export class ResultsComponent implements OnInit {
     LokMesto: 'Novi Sad',
     LokPovKatParcele: '839',
     LokUlicaIBroj: 'Bulevar Oslobođenja 27',
-    PodnosiocAdresa: 'Futoška 57, Novi Sad',
+    PodnosiocAdresa: 'Futoška 67, Novi Sad',
     PodnosiocImePrez: 'Petar Petrović',
     PodnosiocJmbg: '2301995740475'
   }

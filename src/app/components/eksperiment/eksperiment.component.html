@@ -28,7 +28,7 @@
         <li>Da pristupate aplikaciji sa
           <i>desktop</i> ili
           <i>laptop</i> uređaja (mobilni i tablet uređaji nisu adekvatni za eksperiment).</li>
-        <li>Popunite anketu koja je prikazana ispod (tek tada dugme "Zapoćni eksperiment" postaje omogućeno).</li>
+        <li>Popunite anketu koja je prikazana ispod (tek tada dugme "Započni eksperiment" postaje omogućeno).</li>
       </ul>
     </div>
   
@@ -44,7 +44,7 @@
           <label class="w3-text-red">
             <b> * </b>
           </label>
-          <input required [(ngModel)]="godineIskustva" name="godineIskustva" type="number" min="0" max="100" style="text-align: center;">
+          <input tabindex="-1" required [(ngModel)]="godineIskustva" name="godineIskustva" type="number" min="0" max="100" style="text-align: center;">
         </p>
         <p>
           <label class="w3-text-teal">
@@ -53,7 +53,7 @@
           <label class="w3-text-red">
             <b> * </b>
           </label>
-          <input required [(ngModel)]="satiDnevno" name="satiDnevno" type="number" min="0" max="24" style="text-align: center;">
+          <input tabindex="-1" required [(ngModel)]="satiDnevno" name="satiDnevno" type="number" min="0" max="24" style="text-align: center;">
         </p>
         <p>
           <label class="w3-text-teal">
@@ -63,11 +63,11 @@
             <b> *</b>
           </label>
           <br>
-          <input required [(ngModel)]="profesija" style="margin-left: 30px; margin-top: 10px;" type="radio" id="daProfesija" name="profesija"
+          <input tabindex="-1" required [(ngModel)]="profesija" style="margin-left: 30px; margin-top: 10px;" type="radio" id="daProfesija" name="profesija"
             value="true">
           <label for="daProfesija"> Da</label>
           <br>
-          <input required [(ngModel)]="profesija" style="margin-left: 30px" type="radio" id="neProfesija" name="profesija" value="false">
+          <input tabindex="-1" required [(ngModel)]="profesija" style="margin-left: 30px" type="radio" id="neProfesija" name="profesija" value="false">
           <label for="neProfesija"> Ne</label>
           <br>
         </p>
@@ -80,11 +80,11 @@
             <b> *</b>
           </label>
           <br>
-          <input required [(ngModel)]="iskustvoKatastar" style="margin-left: 30px; margin-top: 10px;" type="radio" id="daIskustvoKatastar"
+          <input tabindex="-1" required [(ngModel)]="iskustvoKatastar" style="margin-left: 30px; margin-top: 10px;" type="radio" id="daIskustvoKatastar"
             name="iskustvoKatastar" value="true">
           <label for="daIskustvoKatastar"> Da</label>
           <br>
-          <input required [(ngModel)]="iskustvoKatastar" style="margin-left: 30px" type="radio" id="neIskustvoKatastar" name="iskustvoKatastar"
+          <input tabindex="-1" required [(ngModel)]="iskustvoKatastar" style="margin-left: 30px" type="radio" id="neIskustvoKatastar" name="iskustvoKatastar"
             value="false">
           <label for="neIskustvoKatastar"> Ne</label>
           <br>
@@ -109,35 +109,35 @@
             <label class="w3-text-teal">
               <b>Ulica i broj</b>
             </label>
-            <input [(ngModel)]="firstLokUlicaIBroj" required minlength="1" maxlength="50" name="firstLokUlicaIBroj" type="text" style="text-align: center;"
+            <input tabindex="-1" [(ngModel)]="firstLokUlicaIBroj" required minlength="1" maxlength="50" name="firstLokUlicaIBroj" type="text" style="text-align: center;"
               class="w3-input w3-border w3-light-grey">
           </p>
           <p>
             <label class="w3-text-teal">
               <b>Mesto</b>
             </label>
-            <input [(ngModel)]="firstLokMesto" required minlength="1" maxlength="50" name="firstLokMesto" type="text" style="text-align: center;"
+            <input tabindex="-1" [(ngModel)]="firstLokMesto" required minlength="1" maxlength="50" name="firstLokMesto" type="text" style="text-align: center;"
               class="w3-input w3-border w3-light-grey">
           </p>
           <p>
             <label class="w3-text-teal">
               <b>Broj katastarske parcele</b>
             </label>
-            <input [(ngModel)]="firstLokBrKatParcele" required minlength="1" maxlength="50" name="firstLokBrKatParcele" type="text" style="text-align: center;"
+            <input tabindex="-1" [(ngModel)]="firstLokBrKatParcele" required minlength="1" maxlength="50" name="firstLokBrKatParcele" type="text" style="text-align: center;"
               class="w3-input w3-border w3-light-grey">
           </p>
           <p>
             <label class="w3-text-teal">
               <b>Površina katastarske parcele</b>
             </label>
-            <input [(ngModel)]="firstLokPovKatParcele" required minlength="1" maxlength="50" name="firstLokPovKatParcele" type="text"
+            <input tabindex="-1" [(ngModel)]="firstLokPovKatParcele" required minlength="1" maxlength="50" name="firstLokPovKatParcele" type="text"
               style="text-align: center;" class="w3-input w3-border w3-light-grey">
           </p>
           <p>
             <label class="w3-text-teal">
               <b>Broj objekata koji se nalaze na parceli/parcelama</b>
             </label>
-            <input [(ngModel)]="firstLokBrObjekataNaParceli" required minlength="1" maxlength="50" name="firstLokBrObjekataNaParceli"
+            <input tabindex="-1" [(ngModel)]="firstLokBrObjekataNaParceli" required minlength="1" maxlength="50" name="firstLokBrObjekataNaParceli"
               type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
           </p>
         </fieldset>
@@ -147,21 +147,21 @@
             <label class="w3-text-teal">
               <b>Ime i prezime</b>
             </label>
-            <input [(ngModel)]="firstPodnosiocImePrez" required minlength="1" maxlength="50" name="firstPodnosiocImePrez" type="text"
+            <input tabindex="-1" [(ngModel)]="firstPodnosiocImePrez" required minlength="1" maxlength="50" name="firstPodnosiocImePrez" type="text"
               style="text-align: center;" class="w3-input w3-border w3-light-grey">
           </p>
           <p>
             <label class="w3-text-teal">
               <b>Adresa</b>
             </label>
-            <input [(ngModel)]="firstPodnosiocAdresa" required minlength="1" maxlength="50" name="firstPodnosiocAdresa" type="text" style="text-align: center;"
+            <input tabindex="-1" [(ngModel)]="firstPodnosiocAdresa" required minlength="1" maxlength="50" name="firstPodnosiocAdresa" type="text" style="text-align: center;"
               class="w3-input w3-border w3-light-grey">
           </p>
           <p>
             <label class="w3-text-teal">
               <b>JMBG (broj pasoša za stranca)</b>
             </label>
-            <input [(ngModel)]="firstPodnosiocJmbg" required minlength="1" maxlength="50" name="firstPodnosiocJmbg" type="text" style="text-align: center;"
+            <input tabindex="-1" [(ngModel)]="firstPodnosiocJmbg" required minlength="1" maxlength="50" name="firstPodnosiocJmbg" type="text" style="text-align: center;"
               class="w3-input w3-border w3-light-grey">
           </p>
         </fieldset>
@@ -171,14 +171,14 @@
             <label class="w3-text-teal">
               <b>E-poštom na e-adresu</b>
             </label>
-            <input [(ngModel)]="firstDostavaEmail" required minlength="1" maxlength="50" name="firstDostavaEmail" type="text" style="text-align: center;"
+            <input tabindex="-1" [(ngModel)]="firstDostavaEmail" required minlength="1" maxlength="50" name="firstDostavaEmail" type="text" style="text-align: center;"
               class="w3-input w3-border w3-light-grey">
           </p>
           <p>
             <label class="w3-text-teal">
               <b>SMS na mobilnom telefonu</b>
             </label>
-            <input [(ngModel)]="firstDostavaMobilni" required minlength="1" maxlength="50" name="firstDostavaMobilni" type="text" style="text-align: center;"
+            <input tabindex="-1" [(ngModel)]="firstDostavaMobilni" required minlength="1" maxlength="50" name="firstDostavaMobilni" type="text" style="text-align: center;"
               class="w3-input w3-border w3-light-grey">
           </p>
         </fieldset>
@@ -205,35 +205,35 @@
               <label class="w3-text-teal">
                 <b>Ulica i broj</b>
               </label>
-              <input [(ngModel)]="secondLokUlicaIBroj" required minlength="1" maxlength="50" name="secondLokUlicaIBroj" type="text" style="text-align: center;"
+              <input tabindex="-1" [(ngModel)]="secondLokUlicaIBroj" required minlength="1" maxlength="50" name="secondLokUlicaIBroj" type="text" style="text-align: center;"
                 class="w3-input w3-border w3-light-grey">
             </p>
             <p>
               <label class="w3-text-teal">
                 <b>Mesto</b>
               </label>
-              <input [(ngModel)]="secondLokMesto" required minlength="1" maxlength="50" name="secondLokMesto" type="text" style="text-align: center;"
+              <input tabindex="-1" [(ngModel)]="secondLokMesto" required minlength="1" maxlength="50" name="secondLokMesto" type="text" style="text-align: center;"
                 class="w3-input w3-border w3-light-grey">
             </p>
             <p>
               <label class="w3-text-teal">
                 <b>Broj katastarske parcele</b>
               </label>
-              <input [(ngModel)]="secondLokBrKatParcele" required minlength="1" maxlength="50" name="secondLokBrKatParcele" type="text"
+              <input tabindex="-1" [(ngModel)]="secondLokBrKatParcele" required minlength="1" maxlength="50" name="secondLokBrKatParcele" type="text"
                 style="text-align: center;" class="w3-input w3-border w3-light-grey">
             </p>
             <p>
               <label class="w3-text-teal">
                 <b>Površina katastarske parcele</b>
               </label>
-              <input [(ngModel)]="secondLokPovKatParcele" required minlength="1" maxlength="50" name="secondLokPovKatParcele" type="text"
+              <input tabindex="-1" [(ngModel)]="secondLokPovKatParcele" required minlength="1" maxlength="50" name="secondLokPovKatParcele" type="text"
                 style="text-align: center;" class="w3-input w3-border w3-light-grey">
             </p>
             <p>
               <label class="w3-text-teal">
                 <b>Broj objekata koji se nalaze na parceli/parcelama</b>
               </label>
-              <input [(ngModel)]="secondLokBrObjekataNaParceli" required minlength="1" maxlength="50" name="secondLokBrObjekataNaParceli"
+              <input tabindex="-1" [(ngModel)]="secondLokBrObjekataNaParceli" required minlength="1" maxlength="50" name="secondLokBrObjekataNaParceli"
                 type="text" style="text-align: center;" class="w3-input w3-border w3-light-grey">
             </p>
           </fieldset>
@@ -245,21 +245,21 @@
               <label class="w3-text-teal">
                 <b>Ime i prezime</b>
               </label>
-              <input [(ngModel)]="secondPodnosiocImePrez" required minlength="1" maxlength="50" name="secondPodnosiocImePrez" type="text"
+              <input tabindex="-1" [(ngModel)]="secondPodnosiocImePrez" required minlength="1" maxlength="50" name="secondPodnosiocImePrez" type="text"
                 style="text-align: center;" class="w3-input w3-border w3-light-grey">
             </p>
             <p>
               <label class="w3-text-teal">
                 <b>Adresa</b>
               </label>
-              <input [(ngModel)]="secondPodnosiocAdresa" required minlength="1" maxlength="50" name="secondPodnosiocAdresa" type="text"
+              <input tabindex="-1" [(ngModel)]="secondPodnosiocAdresa" required minlength="1" maxlength="50" name="secondPodnosiocAdresa" type="text"
                 style="text-align: center;" class="w3-input w3-border w3-light-grey">
             </p>
             <p>
               <label class="w3-text-teal">
                 <b>JMBG (broj pasoša za stranca)</b>
               </label>
-              <input [(ngModel)]="secondPodnosiocJmbg" required minlength="1" maxlength="50" name="secondPodnosiocJmbg" type="text" style="text-align: center;"
+              <input tabindex="-1" [(ngModel)]="secondPodnosiocJmbg" required minlength="1" maxlength="50" name="secondPodnosiocJmbg" type="text" style="text-align: center;"
                 class="w3-input w3-border w3-light-grey">
             </p>
           </fieldset>
@@ -270,14 +270,14 @@
             <label class="w3-text-teal">
               <b>E-poštom na e-adresu</b>
             </label>
-            <input [(ngModel)]="secondDostavaEmail" required minlength="1" maxlength="50" name="secondDostavaEmail" type="text" style="text-align: center;"
+            <input tabindex="-1" [(ngModel)]="secondDostavaEmail" required minlength="1" maxlength="50" name="secondDostavaEmail" type="text" style="text-align: center;"
               class="w3-input w3-border w3-light-grey">
           </p>
           <p>
             <label class="w3-text-teal">
               <b>SMS na mobilnom telefonu</b>
             </label>
-            <input [(ngModel)]="secondDostavaMobilni" required minlength="1" maxlength="50" name="secondDostavaMobilni" type="text" style="text-align: center;"
+            <input tabindex="-1" [(ngModel)]="secondDostavaMobilni" required minlength="1" maxlength="50" name="secondDostavaMobilni" type="text" style="text-align: center;"
               class="w3-input w3-border w3-light-grey">
           </p>
         </fieldset>
@@ -304,11 +304,11 @@
               <b> *</b>
             </label>
             <br>
-            <input required [(ngModel)]="subjekatPreferira" style="margin-left: 30px; margin-top: 10px;" type="radio" id="firstSubjekatPreferira"
+            <input tabindex="-1" required [(ngModel)]="subjekatPreferira" style="margin-left: 30px; margin-top: 10px;" type="radio" id="firstSubjekatPreferira"
               name="subjekatPreferira" value="first">
             <label for="firstSubjekatPreferira"> Forma u jednoj koloni</label>
             <br>
-            <input required [(ngModel)]="subjekatPreferira" style="margin-left: 30px" type="radio" id="secondSubjekatPreferira" name="subjekatPreferira"
+            <input tabindex="-1" required [(ngModel)]="subjekatPreferira" style="margin-left: 30px" type="radio" id="secondSubjekatPreferira" name="subjekatPreferira"
               value="second">
             <label for="secondSubjekatPreferira"> Forma u tri kolone</label>
             <br>
