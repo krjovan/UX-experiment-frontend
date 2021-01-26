@@ -30,6 +30,8 @@ export class EksperimentComponent implements OnInit {
   showUtisci = false;
   showThanks = false;
 
+  pol: string;
+  starosnoDoba: string;
   godineIskustva: number;
   satiDnevno: number;
   profesija: boolean;
@@ -70,12 +72,12 @@ export class EksperimentComponent implements OnInit {
   secondStartTime;
   secondEndTime;
 
-  constructor(private experimentService:ExperimentService) { 
+  constructor(private experimentService:ExperimentService) {
 
     console.log("sta si",this.isChrome,this.isFirefox);
   }
   ngOnInit() {
-    
+
   }
   onResize(event){
     let nmobile=(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)||(!this.isChrome&&!this.isFirefox));
@@ -145,6 +147,8 @@ export class EksperimentComponent implements OnInit {
   sendExperimentScore() {
 
     var experiment = {
+      'pol': this.pol,
+      'starosnoDoba': this.starosnoDoba,
       'godineIskustva': this.godineIskustva,
       'satiDnevno': this.satiDnevno,
       'profesija': this.profesija,

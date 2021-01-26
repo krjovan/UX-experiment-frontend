@@ -1,6 +1,8 @@
 <dialog *ngIf="openDialog" open>
     <h1 style="text-align:center">Podaci o slučaju</h1>
     <div>
+        <p><span class="boja">Pol: </span>{{(prikazi.pol=='m')?'Muški':'Ženski'}}</p>
+        <p><span class="boja">Starosno doba: </span>{{prikazi.starosnoDoba}}</p>
         <p><span class="boja">Godine iskustva: </span>{{prikazi.godineIskustva}}</p>
         <p><span class="boja">Iskustvo sa katastarom: </span>{{(prikazi.iskustvoKatastar)?'Da':'Ne'}}</p>
         <p><span class="boja">Profesija uključuje računar: </span>{{(prikazi.profesija)?'Da':'Ne'}}</p>

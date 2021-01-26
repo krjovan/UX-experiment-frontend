@@ -113,7 +113,7 @@ export class ResultsComponent implements OnInit {
     let zaCSV;
 
     if(!this.greskeNaKraju)
-      zaCSV=`"Godine iskustva","Iskustvo s katastrom","Profesija rad na racunaru","Redosled popunjavanja","Sati dnevno na racunaru","Misljenje subjekta","Sta subjekat preferira",\
+      zaCSV=`"Pol","Starosno doba","Godine iskustva","Iskustvo s katastrom","Profesija rad na racunaru","Redosled popunjavanja","Sati dnevno na racunaru","Misljenje subjekta","Sta subjekat preferira",\
 "Prva Dostava Email",\
 "Prva Dostava Mobilni",\
 "Prva Broj Parcele",\
@@ -159,7 +159,7 @@ export class ResultsComponent implements OnInit {
 "Ukupno gresaka\n"
       `;
     else
-    zaCSV=`"Godine iskustva","Iskustvo s katastrom","Profesija rad na racunaru","Redosled popunjavanja","Sati dnevno na racunaru","Misljenje subjekta","Sta subjekat preferira",\
+    zaCSV=`"Pol","Starosno doba","Godine iskustva","Iskustvo s katastrom","Profesija rad na racunaru","Redosled popunjavanja","Sati dnevno na racunaru","Misljenje subjekta","Sta subjekat preferira",\
 "Prva Dostava Email",\
 "Greska1",\
 "Prva Dostava Mobilni",\
@@ -207,6 +207,8 @@ export class ResultsComponent implements OnInit {
 
     niz.forEach(el=>{
       let ispisnica=[];
+      ispisnica.push('"'+((el.pol=="m")?'Muški':'Ženski')+'"');
+      ispisnica.push('"'+el.starosnoDoba+'"');
       ispisnica.push(el.godineIskustva);
       ispisnica.push('"'+((el.iskustvoKatastar)?'Da':'Ne')+'"');
       ispisnica.push('"'+((el.profesija)?'Da':'Ne')+'"');
@@ -286,25 +288,25 @@ export class ResultsComponent implements OnInit {
 
   }
 
-  
+
   stringDistance(a, b){
-    if(a.length == 0) return b.length; 
-    if(b.length == 0) return a.length; 
-  
+    if(a.length == 0) return b.length;
+    if(b.length == 0) return a.length;
+
     var matrix = [];
-  
+
     // increment along the first column of each row
     var i;
     for(i = 0; i <= b.length; i++){
       matrix[i] = [i];
     }
-  
+
     // increment each column in the first row
     var j;
     for(j = 0; j <= a.length; j++){
       matrix[0][j] = j;
     }
-  
+
     // Fill in the rest of the matrix
     for(i = 1; i <= b.length; i++){
       for(j = 1; j <= a.length; j++){
@@ -317,7 +319,7 @@ export class ResultsComponent implements OnInit {
         }
       }
     }
-  
+
     return matrix[b.length][a.length];
   };
 }
