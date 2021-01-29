@@ -207,7 +207,7 @@ export class ResultsComponent implements OnInit {
 
     niz.forEach(el=>{
       let ispisnica=[];
-      ispisnica.push('"'+((el.pol=="m")?'Muški':'Ženski')+'"');
+      ispisnica.push(((el.pol=="m")?'Muški':'Ženski'));
       ispisnica.push('"'+el.starosnoDoba+'"');
       ispisnica.push(el.godineIskustva);
       ispisnica.push('"'+((el.iskustvoKatastar)?'Da':'Ne')+'"');
